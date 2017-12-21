@@ -76,6 +76,7 @@ struct i915_params i915_modparams __read_mostly = {
 	.enable_gvt_oos = 1,
 	.enable_conformance_check = true,
 	.disable_gvt_fw_loading = true,
+	.memtrack_debug = 1,
 };
 
 i915_param_named(modeset, int, 0400,
@@ -247,3 +248,7 @@ MODULE_PARM_DESC(enable_conformance_check, "To toggle the GVT guest conformance 
 
 module_param_named(disable_gvt_fw_loading, i915_modparams.disable_gvt_fw_loading, bool, 0400);
 MODULE_PARM_DESC(disable_gvt_fw_loading, "Disable GVT-g fw loading.");
+
+module_param_named(memtrack_debug, i915.memtrack_debug, int, 0600);
+MODULE_PARM_DESC(memtrack_debug,
+		"use Memtrack debug capability (0=never, 1=always)");
