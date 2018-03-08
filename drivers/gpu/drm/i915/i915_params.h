@@ -72,8 +72,7 @@
 	func(bool, enable_pvmmio); \
 	func(bool, enable_gvt_oos); \
 	func(bool, enable_conformance_check); \
-	func(bool, disable_gvt_fw_loading); \
-	func(int, memtrack_debug)
+	func(bool, disable_gvt_fw_loading);
 
 #define MEMBER(T, member) T member
 struct i915_params {
